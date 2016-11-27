@@ -4,15 +4,20 @@ import java.awt.Toolkit;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -69,6 +74,13 @@ public class MainFrame extends javax.swing.JFrame {
         fsCheckBox = new javax.swing.JCheckBox();
         xplaneCheckBox = new javax.swing.JCheckBox();
         recordCheckBox = new javax.swing.JCheckBox();
+        userLabel = new javax.swing.JLabel();
+        userTextField = new javax.swing.JTextField();
+        expireDateLabel = new javax.swing.JLabel();
+        expirDateTextField = new javax.swing.JTextField();
+        checkLicButton = new javax.swing.JButton();
+        purchaseDateLabel = new javax.swing.JLabel();
+        purchaseDateTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -124,6 +136,32 @@ public class MainFrame extends javax.swing.JFrame {
         recordCheckBox.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
         recordCheckBox.setText("記錄");
 
+        userLabel.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        userLabel.setText("使用者名字");
+
+        userTextField.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        userTextField.setText("John Lee");
+
+        expireDateLabel.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        expireDateLabel.setText("截止日期");
+
+        expirDateTextField.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        expirDateTextField.setText("2017/07/30");
+
+        checkLicButton.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        checkLicButton.setText("檢查 license 檔 ");
+        checkLicButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkLicButtonActionPerformed(evt);
+            }
+        });
+
+        purchaseDateLabel.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        purchaseDateLabel.setText("購買日期");
+
+        purchaseDateTextField.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        purchaseDateTextField.setText("2017/03/01");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -142,13 +180,28 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(fileNameButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(fileNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(genLicenseButton)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(genLicenseButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(checkLicButton))
                     .addComponent(traceCheckBox)
                     .addComponent(altitudeCheckBox)
                     .addComponent(topCheckBox)
                     .addComponent(frontCheckBox)
                     .addComponent(thetaCheckBox)
-                    .addComponent(playFileCheckBox))
+                    .addComponent(playFileCheckBox)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(userLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(userTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(expireDateLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(expirDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(purchaseDateLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(purchaseDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(101, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -159,6 +212,18 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(fileNameButton)
                     .addComponent(fileNameLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(userLabel)
+                    .addComponent(userTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(purchaseDateLabel)
+                    .addComponent(purchaseDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(expireDateLabel)
+                    .addComponent(expirDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(macTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(macLabel))
@@ -180,8 +245,10 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(traceCheckBox)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(recordCheckBox)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 4, Short.MAX_VALUE)
-                .addComponent(genLicenseButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(genLicenseButton)
+                    .addComponent(checkLicButton))
                 .addContainerGap())
         );
 
@@ -191,7 +258,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void fileNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileNameButtonActionPerformed
         // TODO add your handling code here:
         JFileChooser c = new JFileChooser();
-        c.setCurrentDirectory(new File("C:"));       
+        c.setCurrentDirectory(new File("C:"));
         int rVal = c.showOpenDialog(MainFrame.this);
         if (rVal == JFileChooser.APPROVE_OPTION) {
             String fileName = c.getCurrentDirectory().toString() + "\\" + c.getSelectedFile().getName();
@@ -200,6 +267,22 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_fileNameButtonActionPerformed
 
     private void genLicenseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genLicenseButtonActionPerformed
+        String user = userTextField.getText();
+        if (user.indexOf(":") != -1) {
+            JOptionPane.showMessageDialog(this, "user name don't allow character ':'");
+            return;
+        }
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        dateFormat.setLenient(false);
+        String purchaseDate = purchaseDateTextField.getText();
+        String expireDate = expirDateTextField.getText();
+        try {
+            Date date1 = dateFormat.parse(expirDateTextField.getText());
+        } catch (ParseException ex) {
+            // Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "date formate not correct, use '2017/01/01'");
+            return;
+        }
         PrintWriter out = null;
         try {
             // TODO add your handling code here:
@@ -231,7 +314,7 @@ public class MainFrame extends javax.swing.JFrame {
             if (this.recordCheckBox.isSelected()) {
                 license |= RECORD;
             }
-            String str = this.macTextField.getText() + "," + license;
+            String str = user + ":" + purchaseDate + ":" + expireDate + ":" + macTextField.getText() + ":" + license;
             System.out.println(str);
             String encrypt = Encryptor.encrypt(str);
             System.out.println(encrypt);
@@ -248,6 +331,24 @@ public class MainFrame extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_genLicenseButtonActionPerformed
+
+    private void checkLicButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkLicButtonActionPerformed
+        // TODO add your handling code here:
+        String fN = this.fileNameLabel.getText();
+        BufferedReader reader;
+        try {
+            reader = new BufferedReader(new FileReader(fN));
+            String str = reader.readLine();
+            String str1 = Encryptor.decrypt(str);
+            JOptionPane.showMessageDialog(this, str1, "Result", JOptionPane.INFORMATION_MESSAGE);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Wrong decrypt file", "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "wrong decrypt file", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_checkLicButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -294,6 +395,9 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox altitudeCheckBox;
+    private javax.swing.JButton checkLicButton;
+    private javax.swing.JTextField expirDateTextField;
+    private javax.swing.JLabel expireDateLabel;
     private javax.swing.JButton fileNameButton;
     private javax.swing.JLabel fileNameLabel;
     private javax.swing.JCheckBox frontCheckBox;
@@ -302,10 +406,14 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel macLabel;
     private javax.swing.JTextField macTextField;
     private javax.swing.JCheckBox playFileCheckBox;
+    private javax.swing.JLabel purchaseDateLabel;
+    private javax.swing.JTextField purchaseDateTextField;
     private javax.swing.JCheckBox recordCheckBox;
     private javax.swing.JCheckBox thetaCheckBox;
     private javax.swing.JCheckBox topCheckBox;
     private javax.swing.JCheckBox traceCheckBox;
+    private javax.swing.JLabel userLabel;
+    private javax.swing.JTextField userTextField;
     private javax.swing.JCheckBox xplaneCheckBox;
     // End of variables declaration//GEN-END:variables
 }
