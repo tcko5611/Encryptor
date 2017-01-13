@@ -17,7 +17,10 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -30,25 +33,61 @@ import javax.swing.JOptionPane;
  */
 public class MainFrame extends javax.swing.JFrame {
 
-    static final int PLAY_FILE = 1;
-    static final int FS = 2;
-    static final int XPLANE = 4;
-    static final int THETA = 8;
-    static final int FRONT = 16;
-    static final int TOP = 32;
-    static final int ALTITUDE = 64;
+    static final int FSX = 1;
+    static final int XPLANE = 2;
+    static final int DATAFRAME1 = 4;
+    static final int DATAFRAME2 = 8;
+    static final int THETA = 16;
+    static final int FRONT = 32;
+    static final int TOP = 64;
     static final int TRACE = 128;
-    static final int RECORD = 256;
-    int license = 0;
+    static final int ALTITUDE = 256;
+    static final int REFLY = 512;
+    static final int RECORD = 1024;
+    static final int PLAY = 2048;
+
+    static final int TAIWANPORT = 1;
+    static final int NEWPORT = 2;
+    static final int AIRLINE = 4;
+    static final int PACIFICPORT = 8;
+    static final int ASIAPORT = 16;
+    static final int ENERMYSHIP = 32;
+    static final int AIRPICTURE = 64;
+    int license1 = 0;
+    int license2 = 0;
 
     /**
      * Creates new form MainFrame
      */
+    private String getPassword() {
+        JPanel panel = new JPanel();
+        JLabel label = new JLabel("輸入密碼:");
+        JPasswordField pass = new JPasswordField(10);
+        panel.add(label);
+        panel.add(pass);
+        String[] options = new String[]{"OK", "Cancel"};
+        int option = JOptionPane.showOptionDialog(null, panel, "密碼",
+                JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE,
+                null, options, options[0]);
+        String password = "";
+        if (option == 0) {// pressing OK button
+            password = new String(pass.getPassword());
+            System.out.println(password);
+        }
+        return password;
+    }
+
     public MainFrame() {
         initComponents();
-        license = 0;
+        license1 = 0;
+        license2 = 0;
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/draw/h.jpg")));
         setTitle("鴻祺航太 license 產生程式");
+        // String password = JOptionPane.showInputDialog(this, "輸入密碼", "密碼", JOptionPane.QUESTION_MESSAGE);
+        String password = getPassword();
+        if (!password.equals("hn1016")) {
+            System.exit(1);
+        }
     }
 
     /**
@@ -60,50 +99,57 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        macLabel = new javax.swing.JLabel();
-        macTextField = new javax.swing.JTextField();
-        thetaCheckBox = new javax.swing.JCheckBox();
-        frontCheckBox = new javax.swing.JCheckBox();
-        topCheckBox = new javax.swing.JCheckBox();
-        altitudeCheckBox = new javax.swing.JCheckBox();
-        traceCheckBox = new javax.swing.JCheckBox();
+        genLicenseButton = new javax.swing.JButton();
+        checkLicButton = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         fileNameButton = new javax.swing.JButton();
         fileNameLabel = new javax.swing.JLabel();
-        genLicenseButton = new javax.swing.JButton();
-        playFileCheckBox = new javax.swing.JCheckBox();
-        fsCheckBox = new javax.swing.JCheckBox();
-        xplaneCheckBox = new javax.swing.JCheckBox();
-        recordCheckBox = new javax.swing.JCheckBox();
-        userLabel = new javax.swing.JLabel();
         userTextField = new javax.swing.JTextField();
-        expireDateLabel = new javax.swing.JLabel();
-        expirDateTextField = new javax.swing.JTextField();
-        checkLicButton = new javax.swing.JButton();
+        userLabel = new javax.swing.JLabel();
         purchaseDateLabel = new javax.swing.JLabel();
         purchaseDateTextField = new javax.swing.JTextField();
+        expirDateTextField = new javax.swing.JTextField();
+        expireDateLabel = new javax.swing.JLabel();
+        macLabel = new javax.swing.JLabel();
+        macTextField = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        fsx = new javax.swing.JCheckBox();
+        xplane = new javax.swing.JCheckBox();
+        dataFrame1 = new javax.swing.JCheckBox();
+        dataFrame2 = new javax.swing.JCheckBox();
+        theta = new javax.swing.JCheckBox();
+        front = new javax.swing.JCheckBox();
+        top = new javax.swing.JCheckBox();
+        trace = new javax.swing.JCheckBox();
+        altitude = new javax.swing.JCheckBox();
+        refly = new javax.swing.JCheckBox();
+        record = new javax.swing.JCheckBox();
+        play = new javax.swing.JCheckBox();
+        taiwanPort = new javax.swing.JCheckBox();
+        airLine = new javax.swing.JCheckBox();
+        newPort = new javax.swing.JCheckBox();
+        pacificPort = new javax.swing.JCheckBox();
+        enermyShip = new javax.swing.JCheckBox();
+        airPicture = new javax.swing.JCheckBox();
+        asiaPort = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        macLabel.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        macLabel.setText("mac address");
+        genLicenseButton.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        genLicenseButton.setText("產生 license 檔");
+        genLicenseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                genLicenseButtonActionPerformed(evt);
+            }
+        });
 
-        macTextField.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        macTextField.setText("64-27-37-39-1B-51");
-
-        thetaCheckBox.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        thetaCheckBox.setText("俯仰圖");
-
-        frontCheckBox.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        frontCheckBox.setText("滾轉圖");
-
-        topCheckBox.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        topCheckBox.setText("方向圖");
-
-        altitudeCheckBox.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        altitudeCheckBox.setText("高度圖");
-
-        traceCheckBox.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        traceCheckBox.setText("軌跡圖");
+        checkLicButton.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        checkLicButton.setText("檢查 license 檔 ");
+        checkLicButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkLicButtonActionPerformed(evt);
+            }
+        });
 
         fileNameButton.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
         fileNameButton.setText("選取檔案");
@@ -116,51 +162,213 @@ public class MainFrame extends javax.swing.JFrame {
         fileNameLabel.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
         fileNameLabel.setText("D:\\temp\\license.txt");
 
-        genLicenseButton.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        genLicenseButton.setText("產生 license 檔");
-        genLicenseButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                genLicenseButtonActionPerformed(evt);
-            }
-        });
-
-        playFileCheckBox.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        playFileCheckBox.setText("播放檔案");
-
-        fsCheckBox.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        fsCheckBox.setText("FS");
-
-        xplaneCheckBox.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        xplaneCheckBox.setText("xplane");
-
-        recordCheckBox.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        recordCheckBox.setText("記錄");
-
-        userLabel.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        userLabel.setText("使用者名字");
-
         userTextField.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
         userTextField.setText("John Lee");
 
-        expireDateLabel.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        expireDateLabel.setText("截止日期");
-
-        expirDateTextField.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        expirDateTextField.setText("2017/07/30");
-
-        checkLicButton.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        checkLicButton.setText("檢查 license 檔 ");
-        checkLicButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkLicButtonActionPerformed(evt);
-            }
-        });
+        userLabel.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        userLabel.setText("使用者名字");
 
         purchaseDateLabel.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
         purchaseDateLabel.setText("購買日期");
 
         purchaseDateTextField.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
         purchaseDateTextField.setText("2017/03/01");
+
+        expirDateTextField.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        expirDateTextField.setText("2017/07/30");
+
+        expireDateLabel.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        expireDateLabel.setText("截止日期");
+
+        macLabel.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        macLabel.setText("mac address");
+
+        macTextField.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        macTextField.setText("64-27-37-39-1B-51");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(macLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(macTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(fileNameButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(fileNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(userLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(userTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(expireDateLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(expirDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(purchaseDateLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(purchaseDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 28, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fileNameButton)
+                    .addComponent(fileNameLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(userLabel)
+                    .addComponent(userTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(purchaseDateLabel)
+                    .addComponent(purchaseDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(expireDateLabel)
+                    .addComponent(expirDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(macTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(macLabel))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        fsx.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        fsx.setText("S1-FSX");
+
+        xplane.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        xplane.setText("S2-XPlane");
+
+        dataFrame1.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        dataFrame1.setText("G1-首頁");
+
+        dataFrame2.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        dataFrame2.setText("G2-飛控");
+
+        theta.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        theta.setText("G3-俯仰圖 Pitch");
+
+        front.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        front.setText("G4-滾轉圖 Roll");
+
+        top.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        top.setText("G5-方向圖 Yaw");
+
+        trace.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        trace.setText("G6-平面圖 Map");
+
+        altitude.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        altitude.setText("G7-高度圖 Alt");
+
+        refly.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        refly.setText("R1-重飛 Refly");
+
+        record.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        record.setText("R2-記錄 Record");
+
+        play.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        play.setText("R3-播放 Play");
+
+        taiwanPort.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        taiwanPort.setText("M1-台灣機場");
+
+        airLine.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        airLine.setText("M3-防空識別區");
+
+        newPort.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        newPort.setText("M2-跑道新建");
+
+        pacificPort.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        pacificPort.setText("M4-太平洋機場");
+
+        enermyShip.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        enermyShip.setText("D1-反艦攔截");
+
+        airPicture.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        airPicture.setText("D2-空中偵照");
+
+        asiaPort.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        asiaPort.setText("M5-亞洲機場");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(fsx)
+                    .addComponent(xplane)
+                    .addComponent(dataFrame1)
+                    .addComponent(dataFrame2)
+                    .addComponent(theta)
+                    .addComponent(front)
+                    .addComponent(top)
+                    .addComponent(trace)
+                    .addComponent(altitude)
+                    .addComponent(refly)
+                    .addComponent(record)
+                    .addComponent(play))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(taiwanPort)
+                    .addComponent(airLine)
+                    .addComponent(newPort)
+                    .addComponent(pacificPort)
+                    .addComponent(enermyShip)
+                    .addComponent(airPicture)
+                    .addComponent(asiaPort))
+                .addGap(69, 69, 69))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(taiwanPort)
+                    .addComponent(fsx, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(xplane)
+                    .addComponent(newPort))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dataFrame1)
+                    .addComponent(airLine))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dataFrame2)
+                    .addComponent(pacificPort))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(theta)
+                    .addComponent(asiaPort))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(front)
+                    .addComponent(enermyShip))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(top)
+                    .addComponent(airPicture))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(trace)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(altitude)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(refly)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(record)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(play)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -169,87 +377,29 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(recordCheckBox)
-                    .addComponent(xplaneCheckBox)
-                    .addComponent(fsCheckBox)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(macLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(macTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(fileNameButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(fileNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(genLicenseButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(checkLicButton))
-                    .addComponent(traceCheckBox)
-                    .addComponent(altitudeCheckBox)
-                    .addComponent(topCheckBox)
-                    .addComponent(frontCheckBox)
-                    .addComponent(thetaCheckBox)
-                    .addComponent(playFileCheckBox)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(userLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(userTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(expireDateLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(expirDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(purchaseDateLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(purchaseDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(101, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fileNameButton)
-                    .addComponent(fileNameLabel))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(userLabel)
-                    .addComponent(userTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(purchaseDateLabel)
-                    .addComponent(purchaseDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(expireDateLabel)
-                    .addComponent(expirDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(macTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(macLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(playFileCheckBox)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(fsCheckBox)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(xplaneCheckBox)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(thetaCheckBox)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(frontCheckBox)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(topCheckBox)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(altitudeCheckBox)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(traceCheckBox)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(recordCheckBox)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(genLicenseButton)
                     .addComponent(checkLicButton))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -286,35 +436,73 @@ public class MainFrame extends javax.swing.JFrame {
         PrintWriter out = null;
         try {
             // TODO add your handling code here:
-            license = 0;
-            if (this.playFileCheckBox.isSelected()) {
-                license |= PLAY_FILE;
+            license1 = 0;
+            if (this.fsx.isSelected()) {
+                license1 |= FSX;
             }
-            if (this.fsCheckBox.isSelected()) {
-                license |= FS;
+            if (this.xplane.isSelected()) {
+                license1 |= XPLANE;
             }
-            if (this.xplaneCheckBox.isSelected()) {
-                license |= XPLANE;
+            if (dataFrame1.isSelected()) {
+                license1 |= DATAFRAME1;
             }
-            if (this.thetaCheckBox.isSelected()) {
-                license |= THETA;
+            if (dataFrame2.isSelected()) {
+                license1 |= DATAFRAME2;
             }
-            if (this.frontCheckBox.isSelected()) {
-                license |= FRONT;
+            if (this.theta.isSelected()) {
+                license1 |= THETA;
             }
-            if (this.topCheckBox.isSelected()) {
-                license |= TOP;
+            if (this.front.isSelected()) {
+                license1 |= FRONT;
             }
-            if (this.altitudeCheckBox.isSelected()) {
-                license |= ALTITUDE;
+            if (this.top.isSelected()) {
+                license1 |= TOP;
             }
-            if (this.traceCheckBox.isSelected()) {
-                license |= TRACE;
+            if (this.trace.isSelected()) {
+                license1 |= TRACE;
             }
-            if (this.recordCheckBox.isSelected()) {
-                license |= RECORD;
+            if (this.altitude.isSelected()) {
+                license1 |= ALTITUDE;
             }
-            String str = user + ":" + purchaseDate + ":" + expireDate + ":" + macTextField.getText() + ":" + license;
+            if (this.refly.isSelected()) {
+                license1 |= REFLY;
+            }
+            if (this.record.isSelected()) {
+                license1 |= RECORD;
+            }
+            if (this.refly.isSelected()) {
+                license1 |= REFLY;
+            }
+            if (this.play.isSelected()) {
+                license1 |= PLAY;
+            }
+            // for license 2
+            license2 = 0;
+            if (this.taiwanPort.isSelected()) {
+                license2 |= TAIWANPORT;
+            }
+            if (this.newPort.isSelected()) {
+                license2 |= NEWPORT;
+            }
+            if (this.airLine.isSelected()) {
+                license2 |= AIRLINE;
+            }
+            if (this.pacificPort.isSelected()) {
+                license2 |= PACIFICPORT;
+            }
+            if (this.asiaPort.isSelected()) {
+                license2 |= ASIAPORT;
+            }
+            if (this.enermyShip.isSelected()) {
+                license2 |= ENERMYSHIP;
+            }
+            if (this.airPicture.isSelected()) {
+                license2 |= AIRPICTURE;
+            }
+            String currentDate = dateFormat.format(new Date());
+            String str = user + ":" + purchaseDate + ":" + expireDate + ":"
+                    + macTextField.getText() + ":" + license1 + ":"
+                    + license2 + ":" + currentDate ;
             System.out.println(str);
             String encrypt = Encryptor.encrypt(str);
             System.out.println(encrypt);
@@ -394,26 +582,38 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox altitudeCheckBox;
+    private javax.swing.JCheckBox airLine;
+    private javax.swing.JCheckBox airPicture;
+    private javax.swing.JCheckBox altitude;
+    private javax.swing.JCheckBox asiaPort;
     private javax.swing.JButton checkLicButton;
+    private javax.swing.JCheckBox dataFrame1;
+    private javax.swing.JCheckBox dataFrame2;
+    private javax.swing.JCheckBox enermyShip;
     private javax.swing.JTextField expirDateTextField;
     private javax.swing.JLabel expireDateLabel;
     private javax.swing.JButton fileNameButton;
     private javax.swing.JLabel fileNameLabel;
-    private javax.swing.JCheckBox frontCheckBox;
-    private javax.swing.JCheckBox fsCheckBox;
+    private javax.swing.JCheckBox front;
+    private javax.swing.JCheckBox fsx;
     private javax.swing.JButton genLicenseButton;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel macLabel;
     private javax.swing.JTextField macTextField;
-    private javax.swing.JCheckBox playFileCheckBox;
+    private javax.swing.JCheckBox newPort;
+    private javax.swing.JCheckBox pacificPort;
+    private javax.swing.JCheckBox play;
     private javax.swing.JLabel purchaseDateLabel;
     private javax.swing.JTextField purchaseDateTextField;
-    private javax.swing.JCheckBox recordCheckBox;
-    private javax.swing.JCheckBox thetaCheckBox;
-    private javax.swing.JCheckBox topCheckBox;
-    private javax.swing.JCheckBox traceCheckBox;
+    private javax.swing.JCheckBox record;
+    private javax.swing.JCheckBox refly;
+    private javax.swing.JCheckBox taiwanPort;
+    private javax.swing.JCheckBox theta;
+    private javax.swing.JCheckBox top;
+    private javax.swing.JCheckBox trace;
     private javax.swing.JLabel userLabel;
     private javax.swing.JTextField userTextField;
-    private javax.swing.JCheckBox xplaneCheckBox;
+    private javax.swing.JCheckBox xplane;
     // End of variables declaration//GEN-END:variables
 }
