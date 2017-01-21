@@ -48,13 +48,13 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel2" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="genLicenseButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="checkLicButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -245,30 +245,45 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="fsx" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="xplane" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="dataFrame1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="dataFrame2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="theta" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="front" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="top" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="trace" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="altitude" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="refly" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="record" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="play" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="fsx" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="xplane" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="dataFrame1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="dataFrame2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="theta" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="front" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="top" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="altitude" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="51" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="taiwanPort" min="-2" max="-2" attributes="0"/>
+                              <Component id="airLine" min="-2" max="-2" attributes="0"/>
+                              <Component id="newPort" min="-2" max="-2" attributes="0"/>
+                              <Component id="pacificPort" min="-2" max="-2" attributes="0"/>
+                              <Component id="enermyShip" min="-2" max="-2" attributes="0"/>
+                              <Component id="airPicture" min="-2" max="-2" attributes="0"/>
+                              <Component id="asiaPort" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="refly" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="record" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="play" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="threed" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="trace" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="51" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="taiwanPort" min="-2" max="-2" attributes="0"/>
-                      <Component id="airLine" min="-2" max="-2" attributes="0"/>
-                      <Component id="newPort" min="-2" max="-2" attributes="0"/>
-                      <Component id="pacificPort" min="-2" max="-2" attributes="0"/>
-                      <Component id="enermyShip" min="-2" max="-2" attributes="0"/>
-                      <Component id="airPicture" min="-2" max="-2" attributes="0"/>
-                      <Component id="asiaPort" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -315,12 +330,14 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="altitude" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Component id="threed" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="3" max="32767" attributes="0"/>
                   <Component id="refly" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="record" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="play" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -387,7 +404,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="G6-&#x5e73;&#x9762;&#x5716; Map"/>
+            <Property name="text" type="java.lang.String" value="G6-2D&#x5c0e;&#x822a;&#x5716;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JCheckBox" name="altitude">
@@ -476,6 +493,14 @@
               <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="M5-&#x4e9e;&#x6d32;&#x6a5f;&#x5834;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="threed">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="G8-3D&#x822a;&#x8de1;&#x5716;"/>
           </Properties>
         </Component>
       </SubComponents>

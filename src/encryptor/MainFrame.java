@@ -45,7 +45,8 @@ public class MainFrame extends javax.swing.JFrame {
     static final int REFLY = 512;
     static final int RECORD = 1024;
     static final int PLAY = 2048;
-
+    static final int THREED = 4096;
+    
     static final int TAIWANPORT = 1;
     static final int NEWPORT = 2;
     static final int AIRLINE = 4;
@@ -132,6 +133,7 @@ public class MainFrame extends javax.swing.JFrame {
         enermyShip = new javax.swing.JCheckBox();
         airPicture = new javax.swing.JCheckBox();
         asiaPort = new javax.swing.JCheckBox();
+        threed = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -261,7 +263,7 @@ public class MainFrame extends javax.swing.JFrame {
         top.setText("G5-方向圖 Yaw");
 
         trace.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        trace.setText("G6-平面圖 Map");
+        trace.setText("G6-2D導航圖");
 
         altitude.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
         altitude.setText("G7-高度圖 Alt");
@@ -296,6 +298,9 @@ public class MainFrame extends javax.swing.JFrame {
         asiaPort.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
         asiaPort.setText("M5-亞洲機場");
 
+        threed.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        threed.setText("G8-3D航跡圖");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -303,28 +308,37 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(fsx)
-                    .addComponent(xplane)
-                    .addComponent(dataFrame1)
-                    .addComponent(dataFrame2)
-                    .addComponent(theta)
-                    .addComponent(front)
-                    .addComponent(top)
-                    .addComponent(trace)
-                    .addComponent(altitude)
-                    .addComponent(refly)
-                    .addComponent(record)
-                    .addComponent(play))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(taiwanPort)
-                    .addComponent(airLine)
-                    .addComponent(newPort)
-                    .addComponent(pacificPort)
-                    .addComponent(enermyShip)
-                    .addComponent(airPicture)
-                    .addComponent(asiaPort))
-                .addGap(69, 69, 69))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(fsx)
+                            .addComponent(xplane)
+                            .addComponent(dataFrame1)
+                            .addComponent(dataFrame2)
+                            .addComponent(theta)
+                            .addComponent(front)
+                            .addComponent(top)
+                            .addComponent(altitude))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(taiwanPort)
+                            .addComponent(airLine)
+                            .addComponent(newPort)
+                            .addComponent(pacificPort)
+                            .addComponent(enermyShip)
+                            .addComponent(airPicture)
+                            .addComponent(asiaPort))
+                        .addGap(69, 69, 69))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(refly)
+                            .addComponent(record)
+                            .addComponent(play))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(threed)
+                            .addComponent(trace))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -362,12 +376,14 @@ public class MainFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(altitude)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(threed)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 3, Short.MAX_VALUE)
                 .addComponent(refly)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(record)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(play)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -394,12 +410,12 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(genLicenseButton)
                     .addComponent(checkLicButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -475,6 +491,9 @@ public class MainFrame extends javax.swing.JFrame {
             }
             if (this.play.isSelected()) {
                 license1 |= PLAY;
+            }
+            if (this.threed.isSelected()) {
+                license1 |= THREED;
             }
             // for license 2
             license2 = 0;
@@ -610,6 +629,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBox refly;
     private javax.swing.JCheckBox taiwanPort;
     private javax.swing.JCheckBox theta;
+    private javax.swing.JCheckBox threed;
     private javax.swing.JCheckBox top;
     private javax.swing.JCheckBox trace;
     private javax.swing.JLabel userLabel;
