@@ -27,18 +27,42 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="genLicenseButton" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="genLicenseButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="checkLicButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jPanel3" min="-2" pref="152" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="checkLicButton" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jPanel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPanel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <Component id="jPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -48,11 +72,31 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel2" max="32767" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="genLicenseButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkLicButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="genLicenseButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkLicButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -237,145 +281,83 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="jPanel2">
+    <Container class="javax.swing.JPanel" name="jPanel3">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Graphic">
+              <Font PropertyName="font" name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Graphic"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+        </Property>
+        <Property name="name" type="java.lang.String" value="Graphic" noResource="true"/>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="fsx" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="xplane" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="dataFrame1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="dataFrame2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="theta" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="front" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="top" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="altitude" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="51" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="taiwanPort" min="-2" max="-2" attributes="0"/>
-                              <Component id="airLine" min="-2" max="-2" attributes="0"/>
-                              <Component id="newPort" min="-2" max="-2" attributes="0"/>
-                              <Component id="pacificPort" min="-2" max="-2" attributes="0"/>
-                              <Component id="enermyShip" min="-2" max="-2" attributes="0"/>
-                              <Component id="airPicture" min="-2" max="-2" attributes="0"/>
-                              <Component id="asiaPort" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="refly" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="record" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="play" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="threed" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="trace" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="yaw" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="plane" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="alt" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="threed" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="LLA" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="Ctrl" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="pitch" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="roll" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="LLA" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="taiwanPort" min="-2" max="-2" attributes="0"/>
-                      <Component id="fsx" min="-2" pref="27" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="Ctrl" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="xplane" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="newPort" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="pitch" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="dataFrame1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="airLine" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="roll" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="dataFrame2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="pacificPort" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="yaw" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="theta" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="asiaPort" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="plane" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="front" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="enermyShip" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="top" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="airPicture" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="trace" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="altitude" min="-2" max="-2" attributes="0"/>
+                  <Component id="alt" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="threed" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="3" max="32767" attributes="0"/>
-                  <Component id="refly" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="record" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="play" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JCheckBox" name="fsx">
+        <Component class="javax.swing.JCheckBox" name="LLA">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="S1-FSX"/>
+            <Property name="text" type="java.lang.String" value="G1-&#x98db;&#x822a;&#x8cc7;&#x8a0a;LLA"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="xplane">
+        <Component class="javax.swing.JCheckBox" name="Ctrl">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="S2-XPlane"/>
+            <Property name="text" type="java.lang.String" value="G2-&#x98db;&#x884c;&#x64cd;&#x63a7;Ctrl"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="dataFrame1">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="G1-&#x9996;&#x9801;"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="dataFrame2">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="G2-&#x98db;&#x63a7;"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="theta">
+        <Component class="javax.swing.JCheckBox" name="pitch">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
@@ -383,7 +365,7 @@
             <Property name="text" type="java.lang.String" value="G3-&#x4fef;&#x4ef0;&#x5716; Pitch"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="front">
+        <Component class="javax.swing.JCheckBox" name="roll">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
@@ -391,7 +373,7 @@
             <Property name="text" type="java.lang.String" value="G4-&#x6efe;&#x8f49;&#x5716; Roll"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="top">
+        <Component class="javax.swing.JCheckBox" name="yaw">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
@@ -399,15 +381,15 @@
             <Property name="text" type="java.lang.String" value="G5-&#x65b9;&#x5411;&#x5716; Yaw"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="trace">
+        <Component class="javax.swing.JCheckBox" name="plane">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="G6-2D&#x5c0e;&#x822a;&#x5716;"/>
+            <Property name="text" type="java.lang.String" value="G6-&#x5e73;&#x9762;&#x5716;2D"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="altitude">
+        <Component class="javax.swing.JCheckBox" name="alt">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
@@ -415,6 +397,55 @@
             <Property name="text" type="java.lang.String" value="G7-&#x9ad8;&#x5ea6;&#x5716; Alt"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JCheckBox" name="threed">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="G8-&#x7acb;&#x9ad4;&#x5716;3D"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel5">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Record">
+              <Font PropertyName="font" name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="record" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="refly" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="play" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                  <Component id="refly" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="record" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="play" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
         <Component class="javax.swing.JCheckBox" name="refly">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -439,39 +470,332 @@
             <Property name="text" type="java.lang.String" value="R3-&#x64ad;&#x653e; Play"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="taiwanPort">
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel6">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Map">
+              <Font PropertyName="font" name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="selfPort" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="sel3DBuil" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="self2DMap" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="coorMap" min="-2" max="-2" attributes="0"/>
+                      <Component id="mark" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="selfPort" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                  <Component id="self2DMap" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="sel3DBuil" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="coorMap" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="mark" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JCheckBox" name="selfPort">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="M1-&#x53f0;&#x7063;&#x6a5f;&#x5834;"/>
+            <Property name="text" type="java.lang.String" value="M1-&#x81ea;&#x5efa;&#x8dd1;&#x9053;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="airLine">
+        <Component class="javax.swing.JCheckBox" name="self2DMap">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="M3-&#x9632;&#x7a7a;&#x8b58;&#x5225;&#x5340;"/>
+            <Property name="text" type="java.lang.String" value="M2-&#x81ea;&#x5efa;2D&#x5730;&#x5716;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="newPort">
+        <Component class="javax.swing.JCheckBox" name="sel3DBuil">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="M2-&#x8dd1;&#x9053;&#x65b0;&#x5efa;"/>
+            <Property name="text" type="java.lang.String" value="M3-&#x81ea;&#x5efa;3D&#x5efa;&#x7269;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="pacificPort">
+        <Component class="javax.swing.JCheckBox" name="coorMap">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="M4-&#x592a;&#x5e73;&#x6d0b;&#x6a5f;&#x5834;"/>
+            <Property name="text" type="java.lang.String" value="M4-&#x5ea7;&#x6a19;&#x5316;&#x5730;&#x5716;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="enermyShip">
+        <Component class="javax.swing.JCheckBox" name="mark">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="M5-&#x6a19;&#x793a;"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel4">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Simulator">
+              <Font PropertyName="font" name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="fsx" alignment="0" min="-2" max="-2" attributes="0"/>
+              <Component id="xplane" min="-2" max="-2" attributes="0"/>
+              <Component id="fs2004" min="-2" max="-2" attributes="0"/>
+              <Component id="dof6" min="-2" max="-2" attributes="0"/>
+              <Component id="dof3" min="-2" max="-2" attributes="0"/>
+              <Component id="model" min="-2" max="-2" attributes="0"/>
+              <Component id="fs2002" alignment="0" min="-2" max="-2" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="fsx" min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="fs2004" min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="fs2002" min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="xplane" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="model" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="dof3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="dof6" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JCheckBox" name="fsx">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="S1-FSX"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="fs2004">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="S1-FS2004"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="fs2002">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="S1-FS2002"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="xplane">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="S2-XPlane"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="model">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="S3-To Model"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="dof3">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="S4-To 3DOF"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="dof6">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="S5-To 6DOF"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel7">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Aviation">
+              <Font PropertyName="font" name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="flyChk" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="airDyn" min="-2" max="-2" attributes="0"/>
+                              <Component id="phyMath" min="-2" max="-2" attributes="0"/>
+                              <Component id="flyTrain" min="-2" max="-2" attributes="0"/>
+                              <Component id="flyQual" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="16" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="phyMath" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="airDyn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="flyTrain" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="flyQual" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="flyChk" min="-2" pref="37" max="-2" attributes="0"/>
+                  <EmptySpace pref="16" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JCheckBox" name="phyMath">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="A1-&#x822a;&#x7a7a;&#x7269;&#x7406;&#x6578;&#x5b78;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="airDyn">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="A2-&#x98db;&#x6a5f;&#x7a7a;&#x6c23;&#x52d5;&#x529b;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="flyTrain">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="A3-&#x98db;&#x884c;&#x8a13;&#x7df4;&#x79d1;&#x76ee;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="flyQual">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="A4-&#x98db;&#x822a;&#x54c1;&#x4fdd;&#x67e5;&#x6838;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="flyChk">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="A5-&#x98db;&#x5b89;&#x4e8b;&#x6545;&#x8abf;&#x67e5;"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel8">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Defence">
+              <Font PropertyName="font" name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="eneShip" min="-2" max="-2" attributes="0"/>
+                      <Component id="airPic" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="eneShip" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="airPic" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JCheckBox" name="eneShip">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
@@ -479,7 +803,7 @@
             <Property name="text" type="java.lang.String" value="D1-&#x53cd;&#x8266;&#x6514;&#x622a;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="airPicture">
+        <Component class="javax.swing.JCheckBox" name="airPic">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
@@ -487,20 +811,265 @@
             <Property name="text" type="java.lang.String" value="D2-&#x7a7a;&#x4e2d;&#x5075;&#x7167;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="asiaPort">
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel9">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Area Data">
+              <Font PropertyName="font" name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="tUsa" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="tNAsia" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="tTwn" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="tSAsia" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="tPac" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="tTwn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="tNAsia" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="tSAsia" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="tPac" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="tUsa" min="-2" pref="37" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JCheckBox" name="tSAsia">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="M5-&#x4e9e;&#x6d32;&#x6a5f;&#x5834;"/>
+            <Property name="text" type="java.lang.String" value="T3-&#x6771;&#x5357;&#x4e9e;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="threed">
+        <Component class="javax.swing.JCheckBox" name="tPac">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="G8-3D&#x822a;&#x8de1;&#x5716;"/>
+            <Property name="text" type="java.lang.String" value="T4-&#x592a;&#x5e73;&#x6d0b;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="tNAsia">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="T2-&#x6771;&#x5317;&#x4e9e;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="tUsa">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="T5-&#x5317;&#x7f8e;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="tTwn">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="T1-&#x53f0;&#x7063;"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel10">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Airport Data">
+              <Font PropertyName="font" name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="uUsa" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="uNAsia" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="uTwn" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="uSAsia" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="uPac" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="uTwn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="uNAsia" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="uSAsia" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="uPac" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="uUsa" min="-2" pref="37" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JCheckBox" name="uSAsia">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="U3-&#x6771;&#x5357;&#x4e9e;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="uPac">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="U4-&#x592a;&#x5e73;&#x6d0b;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="uNAsia">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="U2-&#x6771;&#x5317;&#x4e9e;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="uUsa">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="U5-&#x5317;&#x7f8e;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="uTwn">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="U1-&#x53f0;&#x7063;"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel11">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="AIDZ FIR">
+              <Font PropertyName="font" name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="vUsa" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="vNAsia" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="vTwn" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="vSAsia" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="vPac" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="vTwn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="vNAsia" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="vSAsia" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="vPac" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="vUsa" min="-2" pref="37" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JCheckBox" name="vSAsia">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="V3-&#x6771;&#x5357;&#x4e9e;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="vPac">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="V4-&#x592a;&#x5e73;&#x6d0b;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="vNAsia">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="V2-&#x6771;&#x5317;&#x4e9e;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="vUsa">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="V5-&#x5317;&#x7f8e;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="vTwn">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="&#x65b0;&#x7d30;&#x660e;&#x9ad4;" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="V1-&#x53f0;&#x7063;"/>
           </Properties>
         </Component>
       </SubComponents>

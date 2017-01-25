@@ -32,30 +32,70 @@ import javax.swing.JPasswordField;
  * @author DELL
  */
 public class MainFrame extends javax.swing.JFrame {
-
-    static final int FSX = 1;
-    static final int XPLANE = 2;
-    static final int DATAFRAME1 = 4;
-    static final int DATAFRAME2 = 8;
-    static final int THETA = 16;
-    static final int FRONT = 32;
-    static final int TOP = 64;
-    static final int TRACE = 128;
-    static final int ALTITUDE = 256;
-    static final int REFLY = 512;
-    static final int RECORD = 1024;
-    static final int PLAY = 2048;
-    static final int THREED = 4096;
+    // graphic
+    int lic_g;
+    static final int G1_LLA = 1;
+    static final int G2_CTRL = 2;
+    static final int G3_PITCH = 4;
+    static final int G4_ROLL = 8;
+    static final int G5_YAW = 16;
+    static final int G6_PLANE = 32;
+    static final int G7_ALT = 64;
+    static final int G8_THREED = 128;
     
-    static final int TAIWANPORT = 1;
-    static final int NEWPORT = 2;
-    static final int AIRLINE = 4;
-    static final int PACIFICPORT = 8;
-    static final int ASIAPORT = 16;
-    static final int ENERMYSHIP = 32;
-    static final int AIRPICTURE = 64;
-    int license1 = 0;
-    int license2 = 0;
+    // simulator
+    int lic_s;
+    static final int S1_FSX = 1;
+    static final int S2_XPLANE = 2;
+    static final int S3_MODEL = 4;
+    static final int S4_DOF3 = 8;
+    static final int S5_DOF6 = 16;
+
+    // record
+    int lic_r;
+    static final int R1_REFLY = 1;
+    static final int R2_RECORD = 2;
+    static final int R3_PLAY = 4;
+    // map
+    int lic_m;
+    static final int M1_SELFPORT = 1;
+    static final int M2_SELF2DMAP = 2;
+    static final int M3_SELF3DBUIL = 4;
+    static final int M4_COORMAP = 8;
+    static final int M5_MARK = 16;
+    // aviation
+    int lic_a;
+    static final int A1_PHYMATH = 1;
+    static final int A2_AIRDYN = 2;
+    static final int A3_FLYTRAIN = 4;
+    static final int A4_FLYQUAL = 8;
+    static final int A5_FLYCHK = 16;
+    // defence
+    int lic_d;
+    static final int D1_ENESHIP = 1;
+    static final int D2_AIRPIC = 2;
+    // area data
+    int lic_t;
+    static final int T1_TWN = 1;
+    static final int T2_NASIA = 2;
+    static final int T3_SASIA = 4;
+    static final int T4_PAC = 8;
+    static final int T5_USA = 16;
+    // airport data
+    int lic_u;
+    static final int U1_TWN = 1;
+    static final int U2_NASIA = 2;
+    static final int U3_SASIA = 4;
+    static final int U4_PAC = 8;
+    static final int U5_USA = 16;
+    // AIDZ FIR
+    int lic_v;
+    static final int V1_TWN = 1;
+    static final int V2_NASIA = 2;
+    static final int V3_SASIA = 4;
+    static final int V4_PAC = 8;
+    static final int V5_USA = 16;
+    
 
     /**
      * Creates new form MainFrame
@@ -80,8 +120,9 @@ public class MainFrame extends javax.swing.JFrame {
 
     public MainFrame() {
         initComponents();
-        license1 = 0;
-        license2 = 0;
+        lic_g = 0; lic_s = 0;lic_r = 0; lic_m = 0; lic_a = 0; lic_d = 0; 
+        lic_t = 0; lic_u = 0; lic_v = 0;
+
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/draw/h.jpg")));
         setTitle("鴻祺航太 license 產生程式");
         // String password = JOptionPane.showInputDialog(this, "輸入密碼", "密碼", JOptionPane.QUESTION_MESSAGE);
@@ -113,27 +154,60 @@ public class MainFrame extends javax.swing.JFrame {
         expireDateLabel = new javax.swing.JLabel();
         macLabel = new javax.swing.JLabel();
         macTextField = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        fsx = new javax.swing.JCheckBox();
-        xplane = new javax.swing.JCheckBox();
-        dataFrame1 = new javax.swing.JCheckBox();
-        dataFrame2 = new javax.swing.JCheckBox();
-        theta = new javax.swing.JCheckBox();
-        front = new javax.swing.JCheckBox();
-        top = new javax.swing.JCheckBox();
-        trace = new javax.swing.JCheckBox();
-        altitude = new javax.swing.JCheckBox();
+        jPanel3 = new javax.swing.JPanel();
+        LLA = new javax.swing.JCheckBox();
+        Ctrl = new javax.swing.JCheckBox();
+        pitch = new javax.swing.JCheckBox();
+        roll = new javax.swing.JCheckBox();
+        yaw = new javax.swing.JCheckBox();
+        plane = new javax.swing.JCheckBox();
+        alt = new javax.swing.JCheckBox();
+        threed = new javax.swing.JCheckBox();
+        jPanel5 = new javax.swing.JPanel();
         refly = new javax.swing.JCheckBox();
         record = new javax.swing.JCheckBox();
         play = new javax.swing.JCheckBox();
-        taiwanPort = new javax.swing.JCheckBox();
-        airLine = new javax.swing.JCheckBox();
-        newPort = new javax.swing.JCheckBox();
-        pacificPort = new javax.swing.JCheckBox();
-        enermyShip = new javax.swing.JCheckBox();
-        airPicture = new javax.swing.JCheckBox();
-        asiaPort = new javax.swing.JCheckBox();
-        threed = new javax.swing.JCheckBox();
+        jPanel6 = new javax.swing.JPanel();
+        selfPort = new javax.swing.JCheckBox();
+        self2DMap = new javax.swing.JCheckBox();
+        sel3DBuil = new javax.swing.JCheckBox();
+        coorMap = new javax.swing.JCheckBox();
+        mark = new javax.swing.JCheckBox();
+        jPanel4 = new javax.swing.JPanel();
+        fsx = new javax.swing.JCheckBox();
+        fs2004 = new javax.swing.JCheckBox();
+        fs2002 = new javax.swing.JCheckBox();
+        xplane = new javax.swing.JCheckBox();
+        model = new javax.swing.JCheckBox();
+        dof3 = new javax.swing.JCheckBox();
+        dof6 = new javax.swing.JCheckBox();
+        jPanel7 = new javax.swing.JPanel();
+        phyMath = new javax.swing.JCheckBox();
+        airDyn = new javax.swing.JCheckBox();
+        flyTrain = new javax.swing.JCheckBox();
+        flyQual = new javax.swing.JCheckBox();
+        flyChk = new javax.swing.JCheckBox();
+        jPanel8 = new javax.swing.JPanel();
+        eneShip = new javax.swing.JCheckBox();
+        airPic = new javax.swing.JCheckBox();
+        jPanel9 = new javax.swing.JPanel();
+        tSAsia = new javax.swing.JCheckBox();
+        tPac = new javax.swing.JCheckBox();
+        tNAsia = new javax.swing.JCheckBox();
+        tUsa = new javax.swing.JCheckBox();
+        tTwn = new javax.swing.JCheckBox();
+        jPanel10 = new javax.swing.JPanel();
+        uSAsia = new javax.swing.JCheckBox();
+        uPac = new javax.swing.JCheckBox();
+        uNAsia = new javax.swing.JCheckBox();
+        uUsa = new javax.swing.JCheckBox();
+        uTwn = new javax.swing.JCheckBox();
+        jPanel11 = new javax.swing.JPanel();
+        vSAsia = new javax.swing.JCheckBox();
+        vPac = new javax.swing.JCheckBox();
+        vNAsia = new javax.swing.JCheckBox();
+        vUsa = new javax.swing.JCheckBox();
+        vTwn = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -241,32 +315,75 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        fsx.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        fsx.setText("S1-FSX");
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Graphic", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("新細明體", 0, 14))); // NOI18N
+        jPanel3.setToolTipText("Graphic");
+        jPanel3.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        jPanel3.setName("Graphic"); // NOI18N
 
-        xplane.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        xplane.setText("S2-XPlane");
+        LLA.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        LLA.setText("G1-飛航資訊LLA");
+        LLA.setToolTipText("");
 
-        dataFrame1.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        dataFrame1.setText("G1-首頁");
+        Ctrl.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        Ctrl.setText("G2-飛行操控Ctrl");
 
-        dataFrame2.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        dataFrame2.setText("G2-飛控");
+        pitch.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        pitch.setText("G3-俯仰圖 Pitch");
 
-        theta.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        theta.setText("G3-俯仰圖 Pitch");
+        roll.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        roll.setText("G4-滾轉圖 Roll");
 
-        front.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        front.setText("G4-滾轉圖 Roll");
+        yaw.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        yaw.setText("G5-方向圖 Yaw");
 
-        top.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        top.setText("G5-方向圖 Yaw");
+        plane.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        plane.setText("G6-平面圖2D");
 
-        trace.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        trace.setText("G6-2D導航圖");
+        alt.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        alt.setText("G7-高度圖 Alt");
 
-        altitude.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        altitude.setText("G7-高度圖 Alt");
+        threed.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        threed.setText("G8-立體圖3D");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(yaw)
+                    .addComponent(plane)
+                    .addComponent(alt)
+                    .addComponent(threed)
+                    .addComponent(LLA)
+                    .addComponent(Ctrl)
+                    .addComponent(pitch)
+                    .addComponent(roll))
+                .addGap(114, 114, 114))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LLA)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Ctrl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pitch)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(roll)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(yaw)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(plane)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(alt)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(threed))
+        );
+
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Record", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("新細明體", 0, 14))); // NOI18N
 
         refly.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
         refly.setText("R1-重飛 Refly");
@@ -277,113 +394,346 @@ public class MainFrame extends javax.swing.JFrame {
         play.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
         play.setText("R3-播放 Play");
 
-        taiwanPort.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        taiwanPort.setText("M1-台灣機場");
-
-        airLine.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        airLine.setText("M3-防空識別區");
-
-        newPort.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        newPort.setText("M2-跑道新建");
-
-        pacificPort.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        pacificPort.setText("M4-太平洋機場");
-
-        enermyShip.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        enermyShip.setText("D1-反艦攔截");
-
-        airPicture.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        airPicture.setText("D2-空中偵照");
-
-        asiaPort.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        asiaPort.setText("M5-亞洲機場");
-
-        threed.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        threed.setText("G8-3D航跡圖");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(fsx)
-                            .addComponent(xplane)
-                            .addComponent(dataFrame1)
-                            .addComponent(dataFrame2)
-                            .addComponent(theta)
-                            .addComponent(front)
-                            .addComponent(top)
-                            .addComponent(altitude))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(taiwanPort)
-                            .addComponent(airLine)
-                            .addComponent(newPort)
-                            .addComponent(pacificPort)
-                            .addComponent(enermyShip)
-                            .addComponent(airPicture)
-                            .addComponent(asiaPort))
-                        .addGap(69, 69, 69))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(refly)
-                            .addComponent(record)
-                            .addComponent(play))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(threed)
-                            .addComponent(trace))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(record)
+                    .addComponent(refly)
+                    .addComponent(play)))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(taiwanPort)
-                    .addComponent(fsx, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(xplane)
-                    .addComponent(newPort))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dataFrame1)
-                    .addComponent(airLine))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dataFrame2)
-                    .addComponent(pacificPort))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(theta)
-                    .addComponent(asiaPort))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(front)
-                    .addComponent(enermyShip))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(top)
-                    .addComponent(airPicture))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(trace)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(altitude)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(threed)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 3, Short.MAX_VALUE)
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
                 .addComponent(refly)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(record)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(play)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Map", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("新細明體", 0, 14))); // NOI18N
+
+        selfPort.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        selfPort.setText("M1-自建跑道");
+
+        self2DMap.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        self2DMap.setText("M2-自建2D地圖");
+
+        sel3DBuil.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        sel3DBuil.setText("M3-自建3D建物");
+
+        coorMap.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        coorMap.setText("M4-座標化地圖");
+
+        mark.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        mark.setText("M5-標示");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(selfPort)
+                    .addComponent(sel3DBuil)
+                    .addComponent(self2DMap)
+                    .addComponent(coorMap)
+                    .addComponent(mark)))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(selfPort)
+                .addGap(0, 0, 0)
+                .addComponent(self2DMap)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sel3DBuil)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(coorMap)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mark)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Simulator", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("新細明體", 0, 14))); // NOI18N
+
+        fsx.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        fsx.setText("S1-FSX");
+
+        fs2004.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        fs2004.setText("S1-FS2004");
+
+        fs2002.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        fs2002.setText("S1-FS2002");
+
+        xplane.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        xplane.setText("S2-XPlane");
+
+        model.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        model.setText("S3-To Model");
+
+        dof3.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        dof3.setText("S4-To 3DOF");
+
+        dof6.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        dof6.setText("S5-To 6DOF");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(fsx)
+            .addComponent(xplane)
+            .addComponent(fs2004)
+            .addComponent(dof6)
+            .addComponent(dof3)
+            .addComponent(model)
+            .addComponent(fs2002)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(fsx, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fs2004, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fs2002, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(xplane)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(model)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dof3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dof6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Aviation", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("新細明體", 0, 14))); // NOI18N
+
+        phyMath.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        phyMath.setText("A1-航空物理數學");
+
+        airDyn.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        airDyn.setText("A2-飛機空氣動力");
+
+        flyTrain.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        flyTrain.setText("A3-飛行訓練科目");
+
+        flyQual.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        flyQual.setText("A4-飛航品保查核");
+
+        flyChk.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        flyChk.setText("A5-飛安事故調查");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(flyChk)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(airDyn)
+                            .addComponent(phyMath)
+                            .addComponent(flyTrain)
+                            .addComponent(flyQual))
+                        .addContainerGap(16, Short.MAX_VALUE))))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(phyMath)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(airDyn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(flyTrain)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(flyQual)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(flyChk, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Defence", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("新細明體", 0, 14))); // NOI18N
+
+        eneShip.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        eneShip.setText("D1-反艦攔截");
+
+        airPic.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        airPic.setText("D2-空中偵照");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(eneShip)
+                    .addComponent(airPic))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(eneShip)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(airPic)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Area Data", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("新細明體", 0, 14))); // NOI18N
+
+        tSAsia.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        tSAsia.setText("T3-東南亞");
+
+        tPac.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        tPac.setText("T4-太平洋");
+
+        tNAsia.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        tNAsia.setText("T2-東北亞");
+
+        tUsa.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        tUsa.setText("T5-北美");
+
+        tTwn.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        tTwn.setText("T1-台灣");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tUsa)
+                    .addComponent(tNAsia)
+                    .addComponent(tTwn)
+                    .addComponent(tSAsia)
+                    .addComponent(tPac))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tTwn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(tNAsia)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tSAsia)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tPac)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tUsa, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Airport Data", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("新細明體", 0, 14))); // NOI18N
+
+        uSAsia.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        uSAsia.setText("U3-東南亞");
+
+        uPac.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        uPac.setText("U4-太平洋");
+
+        uNAsia.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        uNAsia.setText("U2-東北亞");
+
+        uUsa.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        uUsa.setText("U5-北美");
+
+        uTwn.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        uTwn.setText("U1-台灣");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(uUsa)
+                    .addComponent(uNAsia)
+                    .addComponent(uTwn)
+                    .addComponent(uSAsia)
+                    .addComponent(uPac))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(uTwn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(uNAsia)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(uSAsia)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(uPac)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(uUsa, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "AIDZ FIR", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("新細明體", 0, 14))); // NOI18N
+
+        vSAsia.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        vSAsia.setText("V3-東南亞");
+
+        vPac.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        vPac.setText("V4-太平洋");
+
+        vNAsia.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        vNAsia.setText("V2-東北亞");
+
+        vUsa.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        vUsa.setText("V5-北美");
+
+        vTwn.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        vTwn.setText("V1-台灣");
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(vUsa)
+                    .addComponent(vNAsia)
+                    .addComponent(vTwn)
+                    .addComponent(vSAsia)
+                    .addComponent(vPac))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(vTwn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(vNAsia)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(vSAsia)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(vPac)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(vUsa, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -394,15 +744,32 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(genLicenseButton)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(genLicenseButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(checkLicButton))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(checkLicButton))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -410,11 +777,26 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(genLicenseButton)
-                    .addComponent(checkLicButton))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(genLicenseButton)
+                            .addComponent(checkLicButton)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -451,77 +833,163 @@ public class MainFrame extends javax.swing.JFrame {
         }
         PrintWriter out = null;
         try {
-            // TODO add your handling code here:
-            license1 = 0;
-            if (this.fsx.isSelected()) {
-                license1 |= FSX;
+            // graphic
+            lic_g = 0;
+            if (LLA.isSelected()) {
+                lic_g |= G1_LLA;
             }
-            if (this.xplane.isSelected()) {
-                license1 |= XPLANE;
+            if (Ctrl.isSelected()) {
+                lic_g |= G2_CTRL;
             }
-            if (dataFrame1.isSelected()) {
-                license1 |= DATAFRAME1;
+            if (this.pitch.isSelected()) {
+                lic_g |= G3_PITCH;
             }
-            if (dataFrame2.isSelected()) {
-                license1 |= DATAFRAME2;
+            if (this.roll.isSelected()) {
+                lic_g |= G4_ROLL;
             }
-            if (this.theta.isSelected()) {
-                license1 |= THETA;
+            if (this.yaw.isSelected()) {
+                lic_g |= G5_YAW;
             }
-            if (this.front.isSelected()) {
-                license1 |= FRONT;
+            if (this.plane.isSelected()) {
+                lic_g |= G6_PLANE;
             }
-            if (this.top.isSelected()) {
-                license1 |= TOP;
-            }
-            if (this.trace.isSelected()) {
-                license1 |= TRACE;
-            }
-            if (this.altitude.isSelected()) {
-                license1 |= ALTITUDE;
-            }
-            if (this.refly.isSelected()) {
-                license1 |= REFLY;
-            }
-            if (this.record.isSelected()) {
-                license1 |= RECORD;
-            }
-            if (this.refly.isSelected()) {
-                license1 |= REFLY;
-            }
-            if (this.play.isSelected()) {
-                license1 |= PLAY;
+            if (this.alt.isSelected()) {
+                lic_g |= G7_ALT;
             }
             if (this.threed.isSelected()) {
-                license1 |= THREED;
+                lic_g |= G8_THREED;
             }
-            // for license 2
-            license2 = 0;
-            if (this.taiwanPort.isSelected()) {
-                license2 |= TAIWANPORT;
+            // Simulator
+            lic_s = 0;
+            if (this.fsx.isSelected() || fs2004.isSelected() || fs2002.isSelected()) {
+                lic_s |= S1_FSX;
             }
-            if (this.newPort.isSelected()) {
-                license2 |= NEWPORT;
+            if (this.xplane.isSelected()) {
+                lic_s |= S2_XPLANE;
             }
-            if (this.airLine.isSelected()) {
-                license2 |= AIRLINE;
+            if (this.model.isSelected()) {
+                lic_s |= S3_MODEL;
             }
-            if (this.pacificPort.isSelected()) {
-                license2 |= PACIFICPORT;
+            if (this.dof3.isSelected()) {
+                lic_s |= S4_DOF3;
             }
-            if (this.asiaPort.isSelected()) {
-                license2 |= ASIAPORT;
+            if (this.dof6.isSelected()) {
+                lic_s |= S5_DOF6;
             }
-            if (this.enermyShip.isSelected()) {
-                license2 |= ENERMYSHIP;
+            // TODO add your handling code here:
+            lic_r = 0;
+            if (this.refly.isSelected()) {
+                lic_r |= R1_REFLY;
             }
-            if (this.airPicture.isSelected()) {
-                license2 |= AIRPICTURE;
+            if (this.record.isSelected()) {
+                lic_r |= R2_RECORD;
+            }
+            if (this.play.isSelected()) {
+                lic_r |= R3_PLAY;
+            }
+            
+            // for map 
+            lic_m = 0;
+            if (this.selfPort.isSelected()) {
+                lic_m |= M1_SELFPORT;
+            }
+            if (this.self2DMap.isSelected()) {
+                lic_m |= M2_SELF2DMAP;
+            }
+            if (this.sel3DBuil.isSelected()) {
+                lic_m |= M3_SELF3DBUIL;
+            }
+            if (this.coorMap.isSelected()) {
+                lic_m |= M4_COORMAP;
+            }
+            if (this.mark.isSelected()) {
+                lic_m |= M5_MARK;
+            }
+            
+            // aviation
+            lic_a = 0;
+            if (this.phyMath.isSelected()) {
+                lic_a |= A1_PHYMATH;
+            }
+            if (this.airDyn.isSelected()) {
+                lic_a |= A2_AIRDYN;
+            }
+            if (this.flyTrain.isSelected()) {
+                lic_a |= A3_FLYTRAIN;
+            }
+            if (this.flyQual.isSelected()) {
+                lic_a |= A4_FLYQUAL;
+            }
+            if(this.flyChk.isSelected()) {
+                lic_a |= A5_FLYCHK;
+            }
+            // defence
+            lic_d = 0;
+            if (this.eneShip.isSelected()) {
+                lic_d |= D1_ENESHIP;
+            }
+            if (this.airPic.isSelected()) {
+                lic_d |= D2_AIRPIC;
+            }
+            // Area Data
+            lic_t = 0;
+            if (this.tTwn.isSelected()) {
+                lic_t |= T1_TWN;
+            }
+            if (this.tNAsia.isSelected()) {
+                lic_t |= T2_NASIA;
+            }
+            if (this.tSAsia.isSelected()) {
+                lic_t |= T3_SASIA;
+            }
+            if (this.tPac.isSelected()) {
+                lic_t |= T4_PAC;
+            }
+            if (this.tUsa.isSelected()) {
+                lic_t |= T5_USA;
+            }
+            
+            // Airport Data
+            lic_u = 0;
+            if (this.uTwn.isSelected()) {
+                lic_u |= U1_TWN;
+            }
+            if (this.uNAsia.isSelected()) {
+                lic_u |= U2_NASIA;
+            }
+            if (this.uSAsia.isSelected()) {
+                lic_u |= U3_SASIA;
+            }
+            if (this.uPac.isSelected()) {
+                lic_u |= U4_PAC;
+            }
+            if (this.uUsa.isSelected()) {
+                lic_u |= U5_USA;
+            }
+            
+            // AIDZ FIR
+            lic_v = 0;
+            if (this.vTwn.isSelected()) {
+                lic_v |= V1_TWN;
+            }
+            if (this.vNAsia.isSelected()) {
+                lic_v |= V2_NASIA;
+            }
+            if (this.vSAsia.isSelected()) {
+                lic_v |= V3_SASIA;
+            }
+            if (this.vPac.isSelected()) {
+                lic_v |= V4_PAC;
+            }
+            if (this.vUsa.isSelected()) {
+                lic_v |= V5_USA;
             }
             String currentDate = dateFormat.format(new Date());
+            // total 14 field
             String str = user + ":" + purchaseDate + ":" + expireDate + ":"
-                    + macTextField.getText() + ":" + license1 + ":"
-                    + license2 + ":" + currentDate ;
+                    + macTextField.getText() + ":" + lic_g + ":" + lic_s + ":"
+                    + lic_r + ":" + lic_m + ":" + lic_a + ":" + lic_d + ":" 
+                    + lic_t + ":" + lic_u + ":" + lic_v + ":" +currentDate ;
             System.out.println(str);
             String encrypt = Encryptor.encrypt(str);
             System.out.println(encrypt);
@@ -601,39 +1069,72 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox airLine;
-    private javax.swing.JCheckBox airPicture;
-    private javax.swing.JCheckBox altitude;
-    private javax.swing.JCheckBox asiaPort;
+    private javax.swing.JCheckBox Ctrl;
+    private javax.swing.JCheckBox LLA;
+    private javax.swing.JCheckBox airDyn;
+    private javax.swing.JCheckBox airPic;
+    private javax.swing.JCheckBox alt;
     private javax.swing.JButton checkLicButton;
-    private javax.swing.JCheckBox dataFrame1;
-    private javax.swing.JCheckBox dataFrame2;
-    private javax.swing.JCheckBox enermyShip;
+    private javax.swing.JCheckBox coorMap;
+    private javax.swing.JCheckBox dof3;
+    private javax.swing.JCheckBox dof6;
+    private javax.swing.JCheckBox eneShip;
     private javax.swing.JTextField expirDateTextField;
     private javax.swing.JLabel expireDateLabel;
     private javax.swing.JButton fileNameButton;
     private javax.swing.JLabel fileNameLabel;
-    private javax.swing.JCheckBox front;
+    private javax.swing.JCheckBox flyChk;
+    private javax.swing.JCheckBox flyQual;
+    private javax.swing.JCheckBox flyTrain;
+    private javax.swing.JCheckBox fs2002;
+    private javax.swing.JCheckBox fs2004;
     private javax.swing.JCheckBox fsx;
     private javax.swing.JButton genLicenseButton;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JLabel macLabel;
     private javax.swing.JTextField macTextField;
-    private javax.swing.JCheckBox newPort;
-    private javax.swing.JCheckBox pacificPort;
+    private javax.swing.JCheckBox mark;
+    private javax.swing.JCheckBox model;
+    private javax.swing.JCheckBox phyMath;
+    private javax.swing.JCheckBox pitch;
+    private javax.swing.JCheckBox plane;
     private javax.swing.JCheckBox play;
     private javax.swing.JLabel purchaseDateLabel;
     private javax.swing.JTextField purchaseDateTextField;
     private javax.swing.JCheckBox record;
     private javax.swing.JCheckBox refly;
-    private javax.swing.JCheckBox taiwanPort;
-    private javax.swing.JCheckBox theta;
+    private javax.swing.JCheckBox roll;
+    private javax.swing.JCheckBox sel3DBuil;
+    private javax.swing.JCheckBox self2DMap;
+    private javax.swing.JCheckBox selfPort;
+    private javax.swing.JCheckBox tNAsia;
+    private javax.swing.JCheckBox tPac;
+    private javax.swing.JCheckBox tSAsia;
+    private javax.swing.JCheckBox tTwn;
+    private javax.swing.JCheckBox tUsa;
     private javax.swing.JCheckBox threed;
-    private javax.swing.JCheckBox top;
-    private javax.swing.JCheckBox trace;
+    private javax.swing.JCheckBox uNAsia;
+    private javax.swing.JCheckBox uPac;
+    private javax.swing.JCheckBox uSAsia;
+    private javax.swing.JCheckBox uTwn;
+    private javax.swing.JCheckBox uUsa;
     private javax.swing.JLabel userLabel;
     private javax.swing.JTextField userTextField;
+    private javax.swing.JCheckBox vNAsia;
+    private javax.swing.JCheckBox vPac;
+    private javax.swing.JCheckBox vSAsia;
+    private javax.swing.JCheckBox vTwn;
+    private javax.swing.JCheckBox vUsa;
     private javax.swing.JCheckBox xplane;
+    private javax.swing.JCheckBox yaw;
     // End of variables declaration//GEN-END:variables
 }
