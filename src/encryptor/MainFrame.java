@@ -8,8 +8,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -32,6 +30,7 @@ import javax.swing.JPasswordField;
  * @author DELL
  */
 public class MainFrame extends javax.swing.JFrame {
+
     // graphic
     int lic_g;
     static final int G1_LLA = 1;
@@ -42,7 +41,7 @@ public class MainFrame extends javax.swing.JFrame {
     static final int G6_PLANE = 32;
     static final int G7_ALT = 64;
     static final int G8_THREED = 128;
-    
+
     // simulator
     int lic_s;
     static final int S1_FSX = 1;
@@ -95,7 +94,6 @@ public class MainFrame extends javax.swing.JFrame {
     static final int V3_SASIA = 4;
     static final int V4_PAC = 8;
     static final int V5_USA = 16;
-    
 
     /**
      * Creates new form MainFrame
@@ -120,8 +118,15 @@ public class MainFrame extends javax.swing.JFrame {
 
     public MainFrame() {
         initComponents();
-        lic_g = 0; lic_s = 0;lic_r = 0; lic_m = 0; lic_a = 0; lic_d = 0; 
-        lic_t = 0; lic_u = 0; lic_v = 0;
+        lic_g = 0;
+        lic_s = 0;
+        lic_r = 0;
+        lic_m = 0;
+        lic_a = 0;
+        lic_d = 0;
+        lic_t = 0;
+        lic_u = 0;
+        lic_v = 0;
 
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/draw/h.jpg")));
         setTitle("鴻祺航太 license 產生程式");
@@ -816,7 +821,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void genLicenseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genLicenseButtonActionPerformed
         String user = userTextField.getText();
-        if (user.indexOf(":") != -1) {
+        if (user.contains(":")) {
             JOptionPane.showMessageDialog(this, "user name don't allow character ':'");
             return;
         }
@@ -887,7 +892,7 @@ public class MainFrame extends javax.swing.JFrame {
             if (this.play.isSelected()) {
                 lic_r |= R3_PLAY;
             }
-            
+
             // for map 
             lic_m = 0;
             if (this.selfPort.isSelected()) {
@@ -905,7 +910,7 @@ public class MainFrame extends javax.swing.JFrame {
             if (this.mark.isSelected()) {
                 lic_m |= M5_MARK;
             }
-            
+
             // aviation
             lic_a = 0;
             if (this.phyMath.isSelected()) {
@@ -920,7 +925,7 @@ public class MainFrame extends javax.swing.JFrame {
             if (this.flyQual.isSelected()) {
                 lic_a |= A4_FLYQUAL;
             }
-            if(this.flyChk.isSelected()) {
+            if (this.flyChk.isSelected()) {
                 lic_a |= A5_FLYCHK;
             }
             // defence
@@ -948,7 +953,7 @@ public class MainFrame extends javax.swing.JFrame {
             if (this.tUsa.isSelected()) {
                 lic_t |= T5_USA;
             }
-            
+
             // Airport Data
             lic_u = 0;
             if (this.uTwn.isSelected()) {
@@ -966,7 +971,7 @@ public class MainFrame extends javax.swing.JFrame {
             if (this.uUsa.isSelected()) {
                 lic_u |= U5_USA;
             }
-            
+
             // AIDZ FIR
             lic_v = 0;
             if (this.vTwn.isSelected()) {
@@ -988,8 +993,8 @@ public class MainFrame extends javax.swing.JFrame {
             // total 14 field
             String str = user + ":" + purchaseDate + ":" + expireDate + ":"
                     + macTextField.getText() + ":" + lic_g + ":" + lic_s + ":"
-                    + lic_r + ":" + lic_m + ":" + lic_a + ":" + lic_d + ":" 
-                    + lic_t + ":" + lic_u + ":" + lic_v + ":" +currentDate ;
+                    + lic_r + ":" + lic_m + ":" + lic_a + ":" + lic_d + ":"
+                    + lic_t + ":" + lic_u + ":" + lic_v + ":" + currentDate;
             System.out.println(str);
             String encrypt = Encryptor.encrypt(str);
             System.out.println(encrypt);
@@ -1062,6 +1067,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new MainFrame().setVisible(true);
             }

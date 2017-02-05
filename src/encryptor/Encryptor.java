@@ -5,7 +5,14 @@
  */
 package encryptor;
 
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import org.apache.commons.codec.binary.Base64;
@@ -30,7 +37,7 @@ public class Encryptor {
             //        + Base64.encodeBase64String(encrypted));
 
             return Base64.encodeBase64String(encrypted);
-        } catch (Exception ex) {
+        } catch (UnsupportedEncodingException | InvalidAlgorithmParameterException | InvalidKeyException | NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | NoSuchPaddingException ex) {
             ex.printStackTrace();
         }
 
@@ -49,7 +56,7 @@ public class Encryptor {
             byte[] original = cipher.doFinal(Base64.decodeBase64(encrypted));
 
             return new String(original);
-        } catch (Exception ex) {
+        } catch (UnsupportedEncodingException | InvalidAlgorithmParameterException | InvalidKeyException | NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | NoSuchPaddingException ex) {
             ex.printStackTrace();
         }
 
