@@ -96,6 +96,11 @@ public class MainFrame extends javax.swing.JFrame {
     static final int V4_PAC = 8;
     static final int V5_USA = 16;
 
+    // language
+    int lic_lang;
+    static final int L1_TW = 1;
+    static final int L2_CN = 2;
+
     /**
      * Creates new form MainFrame
      */
@@ -128,7 +133,7 @@ public class MainFrame extends javax.swing.JFrame {
         lic_t = 0;
         lic_u = 0;
         lic_v = 0;
-
+        lic_lang = 0;
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/draw/h.jpg")));
         setTitle("鴻祺航太 license 產生程式");
         // String password = JOptionPane.showInputDialog(this, "輸入密碼", "密碼", JOptionPane.QUESTION_MESSAGE);
@@ -147,6 +152,7 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        langGroup = new javax.swing.ButtonGroup();
         genLicenseButton = new javax.swing.JButton();
         checkLicButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -215,6 +221,9 @@ public class MainFrame extends javax.swing.JFrame {
         vNAsia = new javax.swing.JCheckBox();
         vUsa = new javax.swing.JCheckBox();
         vTwn = new javax.swing.JCheckBox();
+        jPanel2 = new javax.swing.JPanel();
+        twRadioButton = new javax.swing.JRadioButton();
+        cnRadioButton = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -246,7 +255,7 @@ public class MainFrame extends javax.swing.JFrame {
         fileNameLabel.setText("D:\\temp\\license.txt");
 
         userTextField.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
-        userTextField.setText("John Lee");
+        userTextField.setText("TeChing Ko");
 
         userLabel.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
         userLabel.setText("使用者名字");
@@ -753,6 +762,40 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(vUsa, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lang", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("新細明體", 0, 14))); // NOI18N
+        jPanel2.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+
+        langGroup.add(twRadioButton);
+        twRadioButton.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        twRadioButton.setText("TW");
+
+        langGroup.add(cnRadioButton);
+        cnRadioButton.setFont(new java.awt.Font("新細明體", 0, 14)); // NOI18N
+        cnRadioButton.setText("CN");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(twRadioButton)
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cnRadioButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(twRadioButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cnRadioButton)
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -784,7 +827,9 @@ public class MainFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -804,7 +849,8 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(75, 75, 75)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(genLicenseButton)
@@ -999,12 +1045,20 @@ public class MainFrame extends javax.swing.JFrame {
             if (this.vUsa.isSelected()) {
                 lic_v |= V5_USA;
             }
+            
+            // lang
+            if (this.twRadioButton.isSelected()) {
+                lic_lang |= L1_TW;
+            }
+            if (this.cnRadioButton.isSelected()) {
+                lic_lang |= L2_CN;
+            }
             String currentDate = dateFormat.format(new Date());
-            // total 14 field
+            // total 15 field
             String str = user + ":" + purchaseDate + ":" + expireDate + ":"
                     + macTextField.getText() + ":" + lic_g + ":" + lic_s + ":"
                     + lic_r + ":" + lic_m + ":" + lic_a + ":" + lic_d + ":"
-                    + lic_t + ":" + lic_u + ":" + lic_v + ":" + currentDate;
+                    + lic_t + ":" + lic_u + ":" + lic_v + ":" + lic_lang + ":" + currentDate;
             System.out.println(str);
             String encrypt = Encryptor.encrypt(str);
             System.out.println(encrypt);
@@ -1091,6 +1145,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBox airPic;
     private javax.swing.JCheckBox alt;
     private javax.swing.JButton checkLicButton;
+    private javax.swing.JRadioButton cnRadioButton;
     private javax.swing.JCheckBox coorMap;
     private javax.swing.JCheckBox dof3;
     private javax.swing.JCheckBox dof6;
@@ -1109,6 +1164,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -1116,6 +1172,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.ButtonGroup langGroup;
     private javax.swing.JLabel macLabel;
     private javax.swing.JTextField macTextField;
     private javax.swing.JCheckBox mark;
@@ -1139,6 +1196,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBox tTwn;
     private javax.swing.JCheckBox tUsa;
     private javax.swing.JCheckBox threed;
+    private javax.swing.JRadioButton twRadioButton;
     private javax.swing.JCheckBox uNAsia;
     private javax.swing.JCheckBox uPac;
     private javax.swing.JCheckBox uSAsia;
